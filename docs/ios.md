@@ -2,6 +2,8 @@
 This document describes the necessary steps to connect an iOS device to a Wifi network protected with EAP-TLS. This procedure was tested on an iPad with iOS 13.6.1. To start with you need the CA certificate (ca.der), key/certificate pair (in a *.p12 file) and the accompanying password generated with the manageusers.sh in your FreeRadius installation.
 
 ## Import certificates
+- `openssl pkcs12 -in user.p12 -out user.pem`
+- `openssl pkcs12 -legacy -in user.pem -out userlegacy.p12`
 - Copy certificates to your iCloud account
 - Using the file browser on your iOS device, install the certificates
 - Under Settings, install the new certificates
